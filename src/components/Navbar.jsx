@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar({ darkMode, setDarkMode }) {
   return (
-    <header className="fixed top-0 w-full z-10 bg-white dark:bg-gray-900 shadow-sm">
+    <header className="fixed top-0 w-full z-10 bg-white dark:bg-gray-900 shadow-sm dark:border-gray-700">
       <div className="relative flex max-w-7xl flex-col overflow-hidden px-10 p-4 md:mx-auto md:flex-row md:items-center">
         <a
           href="#"
@@ -74,9 +74,23 @@ function Navbar({ darkMode, setDarkMode }) {
             <li className="md:mr-12">
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full shadow-md hover:shadow-lg transition mb-1"
+                className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:bg-gray-900
+             text-gray-800 dark:text-gray-200  transition-all duration-500"
               >
-                {darkMode ? "🌞" : "🌙"}
+                <span
+                  className={`absolute transition-transform duration-700 ${
+                    darkMode ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
+                  }`}
+                >
+                  🌙
+                </span>
+                <span
+                  className={`absolute transition-transform duration-700 ${
+                    darkMode ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
+                  }`}
+                >
+                  ☀️
+                </span>
               </button>
             </li>
           </ul>

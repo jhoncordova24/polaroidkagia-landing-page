@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import About from "./components/About.jsx";
 import Products from "./components/Products.jsx";
+import Footer from "./components/Footer.jsx";
+import Testimonials from "./components/Testimonials.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -25,6 +27,8 @@ function App() {
       <HeroSection />
       <About />
       <Products />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }
